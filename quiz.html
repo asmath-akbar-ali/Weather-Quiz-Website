@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <h1>Smart Quiz</h1>
+      <a href="index.html">
+        <img src="images/weather.png" id="img-quiz" alt="Weather Home" />
+      </a>
+    </div>
+
+    <!-- Subheading -->
+    <h2>Test your knowledge in Science!</h2>
+
+    <!-- Quiz Box -->
+    <div class="box">
+      <div class="inner-box quiz-box">
+        <div id="question-box">
+          <p id="question">Loading question...</p>
+          <div id="options" class="options-container"></div>
+          <button id="next-btn" style="display: none;" onclick="loadQuestion()">Next</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
