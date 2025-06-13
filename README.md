@@ -78,4 +78,4 @@ weather-quiz-app/
 
 ## Website Link
 
-🔗 [Visit the App](https://your-weather-quiz.vercel.app/)
+🔗 [Visit the App](https://weather-quiz-website.vercel.app/)
