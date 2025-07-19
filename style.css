@@ -1,14 +1,17 @@
+/* RESET & BASE STYLES */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
   background-color: #e0f7fa;
+  overflow-x: hidden;
 }
 
+/* HEADER */
 .header {
   height: 80px;
   width: 100%;
@@ -16,45 +19,52 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 }
 
 .header h1 {
-  flex: 1;
-  text-align: center;
   color: #ffffff;
   font-weight: 900;
   font-style: italic;
-}
-
-#img-quiz {
-  margin-right: 30px;
-  max-height: 55px;
-  max-width: 120px;
-  filter: invert(100%);
-}
-
-.container h2 {
-  margin: 50px 20px 20px;
+  font-size: 24px;
+  flex: 1;
   text-align: center;
 }
 
+#img-quiz {
+  height: 55px;
+  width: auto;
+  filter: invert(100%);
+  cursor: pointer;
+}
+
+/* SUBHEADING */
+.container h2 {
+  margin: 30px 20px 10px;
+  text-align: center;
+  color: #263238;
+  font-size: 18px;
+  padding: 0 15px;
+}
+
+/* MAIN BOX */
 .container .box {
   display: flex;
-  margin: 50px;
   justify-content: center;
   align-items: center;
+  margin: 30px 20px;
 }
 
 .inner-box {
-  width: 30%;
-  padding: 20px;
-  border: 2px solid black;
+  width: 100%;
+  max-width: 450px;
+  padding: 25px;
   background-color: #263238;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -63,6 +73,7 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
+/* SEARCH ROW */
 .search-row {
   width: 100%;
   display: flex;
@@ -71,11 +82,11 @@ body {
 
 #search {
   flex: 1;
-  padding: 15px;
+  padding: 14px;
   border-radius: 20px;
   border: 2px solid black;
-  background-color: #ffffff;
-  font-size: large;
+  font-size: 16px;
+  background-color: #fff;
 }
 
 #search:focus {
@@ -99,24 +110,11 @@ body {
   width: 20px;
 }
 
+/* WEATHER DISPLAY */
 #weather-icon {
   height: 25vh;
+  max-height: 150px;
   width: auto;
-}
-
-.city, .temperature, .humidity-percentage, .wind-percentage, p {
-  color: #ffffff;
-  text-align: center;
-}
-
-.temperature {
-  font-size: 50px;
-  font-weight: bold;
-}
-
-.city {
-  font-size: 40px;
-  margin-bottom: 20px;
 }
 
 .weather img {
@@ -124,15 +122,30 @@ body {
   height: 60px;
 }
 
-.weather{
-	text-align: center;
+.weather {
+  text-align: center;
+}
+
+.temperature {
+  font-size: 50px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+}
+
+.city {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-align: center;
 }
 
 .info-row {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 80px;
+  gap: 60px;
+  flex-wrap: wrap;
 }
 
 .info-item {
@@ -145,12 +158,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .info-text .data {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.info-text p {
+  color: #ffffff;
 }
 
 .info-icon {
@@ -158,16 +176,10 @@ body {
   height: 40px;
 }
 
-@media (max-width: 768px) {
-  .inner-box {
-    width: 120%;
-  }
-}
-
-
-/* Quiz Section  */
+/* QUIZ STYLING */
 .quiz-box {
   text-align: center;
+  padding: 20px;
   gap: 20px;
 }
 
@@ -220,4 +232,83 @@ body {
 
 #next-btn:hover {
   background-color: #4CAF50;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1024px) {
+  .info-row {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .container h2 {
+    font-size: 16px;
+    margin: 20px;
+  }
+
+  .inner-box {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .temperature {
+    font-size: 40px;
+  }
+
+  .city {
+    font-size: 30px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .info-text {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 18px;
+  }
+
+  #search {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .temperature {
+    font-size: 32px;
+  }
+
+  .city {
+    font-size: 24px;
+  }
+
+  .info-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .info-text .data {
+    font-size: 14px;
+  }
+
+  .search-box {
+    height: 44px;
+    width: 44px;
+  }
+
+  .search-box img {
+    width: 16px;
+    height: 16px;
+  }
 }
